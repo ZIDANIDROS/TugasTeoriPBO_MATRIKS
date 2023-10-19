@@ -1,6 +1,6 @@
 # TugasTeoriPBO_MATRIKS
 ## `Husein Zidan - 4522210012`
-<h1>DOKUMENTAS</h1>
+<h1>DOKUMENTASI</h1>
 
 
 <h2>Source and Package</h2>
