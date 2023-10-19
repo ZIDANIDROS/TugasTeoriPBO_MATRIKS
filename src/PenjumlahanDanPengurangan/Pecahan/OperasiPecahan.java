@@ -1,36 +1,36 @@
 package PenjumlahanDanPengurangan.Pecahan;
 
-public class Pecahan {
+public class OperasiPecahan {
     private int pembilang;
     private int penyebut;
 
-    public Pecahan(int pembilang, int penyebut) {
+    public OperasiPecahan(int pembilang, int penyebut) {
         this.pembilang = pembilang;
         this.penyebut = penyebut;
     }
 
-    public Pecahan tambah(Pecahan other) {
+    public OperasiPecahan tambah(OperasiPecahan other) {
         int newPembilang = (this.pembilang * other.penyebut) + (other.pembilang * this.penyebut);
         int newPenyebut = this.penyebut * other.penyebut;
-        return sederhanakan(new Pecahan(newPembilang, newPenyebut));
+        return sederhanakan(new OperasiPecahan(newPembilang, newPenyebut));
     }
 
-    public Pecahan kurang(Pecahan other) {
+    public OperasiPecahan kurang(OperasiPecahan other) {
         int newPembilang = (this.pembilang * other.penyebut) - (other.pembilang * this.penyebut);
         int newPenyebut = this.penyebut * other.penyebut;
-        return sederhanakan(new Pecahan(newPembilang, newPenyebut));
+        return sederhanakan(new OperasiPecahan(newPembilang, newPenyebut));
     }
 
-    public Pecahan kali(Pecahan other) {
+    public OperasiPecahan kali(OperasiPecahan other) {
         int newPembilang = this.pembilang * other.pembilang;
         int newPenyebut = this.penyebut * other.penyebut;
-        return sederhanakan(new Pecahan(newPembilang, newPenyebut));
+        return sederhanakan(new OperasiPecahan(newPembilang, newPenyebut));
     }
 
-    public Pecahan bagi(Pecahan other) {
+    public OperasiPecahan bagi(OperasiPecahan other) {
         int newPembilang = this.pembilang * other.penyebut;
         int newPenyebut = this.penyebut * other.pembilang;
-        return sederhanakan(new Pecahan(newPembilang, newPenyebut));
+        return sederhanakan(new OperasiPecahan(newPembilang, newPenyebut));
     }
 
     private int fpb(int a, int b) {
@@ -40,7 +40,7 @@ public class Pecahan {
         return fpb(b, a % b);
     }
 
-    private Pecahan sederhanakan(Pecahan pecahan) {
+    private OperasiPecahan sederhanakan(OperasiPecahan pecahan) {
         int common = fpb(pecahan.pembilang, pecahan.penyebut);
         pecahan.pembilang /= common;
         pecahan.penyebut /= common;
